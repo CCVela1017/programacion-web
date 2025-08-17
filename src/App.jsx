@@ -6,7 +6,7 @@ import Card from "./components/card.jsx"
 function App() {
   
   const [pokemonData, setPokemonData] = useState([])
-  const URL = 'https://pokeapi.co/api/v2/pokemon?limit=151'
+  const URL = 'https://pokeapi.co/api/v2/pokemon?limit=50'
 
   const fetchPokemonData = async () => {
     try {
