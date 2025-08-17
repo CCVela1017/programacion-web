@@ -16,4 +16,4 @@
 
 ![](./docs/doppler-secrets.png)
 
-- [AWS Cloudfront CDN](da180dimbskta.cloudfront.net)
+- [AWS Cloudfront CDN](https://da180dimbskta.cloudfront.net)
