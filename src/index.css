@@ -25,7 +25,7 @@ body {
   border-radius: 15px;
   margin: 10px;
   padding: 20px;
-  width: 200px;
+  width: 150px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s;
@@ -36,7 +36,7 @@ body {
 }
 
 img {
-  max-width: 210px;
+  max-width: 100%;
   height: auto;
 }
 
