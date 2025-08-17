@@ -30,7 +30,7 @@ function App() {
 
   return (
     <>
-      <h1 className="title">PokeAPI Cards</h1>
+      <h1 className="title">PokeMon Cards</h1>
         <div className="card-container">
           {pokemonData.map((pokemon) => (
             <Card key={pokemon.id} pokemon={pokemon} />
