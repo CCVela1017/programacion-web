@@ -11,3 +11,7 @@
 - GitHub Secrets
 
 ![](./docs/git-secrets.png)
+
+- Doppler Secrets
+
+![](./docs/doppler-secrets.png)
