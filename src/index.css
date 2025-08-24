@@ -35,34 +35,78 @@ h1 {
   line-height: 1.1;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+h2 {
+  font-size: 1.5em;
+  font-weight: 400;
+  opacity: 0.8;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+h3 {
+  margin-top: 1.25em;
+  font-size: 1.2em;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.home {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+}
+
+.left {
+  flex: 1;
+  text-align: left;
+}
+
+.right {
+  width: 50%;
+  flex: 1;
+  text-align: right;
+}
+
+.assignment {
+  width: 150%;
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 2px solid #444;
+  padding: 1em;
+  margin: 1em 0;
+  text-align: left;
+  border-radius: 8px;
+}
+
+.card-btn {
+  height: 100%;
+  background-color: transparent;
+  height: 2.4em;
+  align-self: center;
+  border: 2px solid transparent;
+}
+
+.state-btn {
+  width: 120px;
+  height: 100%;
+  background-color: transparent;
+  height: 2em;
+  align-self: center;
+  border: 2px solid #646cff;
+  color: #646cff;
+  border-radius: 8px;
+  padding: 0 1em;
+}
+
+.state-btn:hover {
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #646cff;
+  color: white;
+}
+
+.card-btn:hover {
+  cursor: pointer;
+  font-weight: bold;
 }

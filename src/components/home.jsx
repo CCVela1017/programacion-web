@@ -47,7 +47,7 @@ function Home() {
         </div>
         
         <div className="right">
-          <h1>Mis tareas</h1>
+          <h1>Mis Tareas</h1>
           {assignments.map(assignment => (
             <Assignment 
               key={assignment.id} 
