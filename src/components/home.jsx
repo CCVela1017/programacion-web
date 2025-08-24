@@ -36,9 +36,11 @@ function Home() {
 
   return (
     <>
+      
       <div className="home">
 
         <div className="left">
+          <h1 className='title-1'>Manejador de tareas</h1>
           <AssignmentGenerator onDataSend={(newAssignment) => {
             setAllAssignments([...allAssignments, newAssignment])
             setAssignments([...assignments, newAssignment])
