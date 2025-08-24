@@ -1,12 +1,20 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Assignment from './assignment.jsx'
 import AssignmentGenerator from './create-assignment.jsx';
 import AssignmentFilter from './filter-assignments.jsx';
 
 function Home() {
-  const [allAssignments, setAllAssignments] = useState([]);
+  const [allAssignments, setAllAssignments] = useState(() =>
+  {
+    const saved = localStorage.getItem("assignments");
+    return saved ? JSON.parse(saved) : [];
+  });
 
   const [assignments, setAssignments] = useState(allAssignments);
+
+  useEffect(() => {
+    localStorage.setItem("assignments", JSON.stringify(allAssignments));
+  }, [allAssignments])
 
   const deleteAssignment = (id) => {
     const updated = allAssignments.filter(a => a.id !== id);
@@ -40,10 +48,11 @@ function Home() {
       <div className="home">
 
         <div className="left">
-          <h1 className='title-1'>Manejador de tareas</h1>
+          <h1>Manejador de tareas</h1>
           <AssignmentGenerator onDataSend={(newAssignment) => {
-            setAllAssignments([...allAssignments, newAssignment])
-            setAssignments([...assignments, newAssignment])
+            const updated = [...allAssignments, newAssignment];
+            setAllAssignments(updated);
+            setAssignments(updated);
           } } />
           <AssignmentFilter onFilter={onFilter} />
         </div>
