@@ -4,24 +4,12 @@ import AssignmentGenerator from './create-assignment.jsx';
 import AssignmentFilter from './filter-assignments.jsx';
 
 function Home() {
-  const [allAssignments, setAllAssignments] = useState([
-    {id: 1, title: "Mi primera tarea", cState: "Pendiente"},
-    {id: 2, title: "Mi segunda tarea", cState: "Pendiente"},
-    {id: 3, title: "Mi tercera tarea", cState: "Pendiente"}
-  ]);
+  const [allAssignments, setAllAssignments] = useState([]);
 
   const [assignments, setAssignments] = useState(allAssignments);
 
   const deleteAssignment = (id) => {
     const updated = allAssignments.filter(a => a.id !== id);
-    setAllAssignments(updated);
-    setAssignments(updated);
-  };
-
-  const onStateChange = (id, newState) => {
-    const updated = allAssignments.map(a =>
-      a.id === id ? { ...a, cState: newState } : a
-    );
     setAllAssignments(updated);
     setAssignments(updated);
   };
@@ -34,12 +22,27 @@ function Home() {
     }
   };
 
+  const onStateChange = (id, newState) => {
+    const updated = allAssignments.map(a => {
+      if (a.id === id) {
+        return { ...a, cState: newState };
+      }
+      return a;
+    }
+    );
+    setAllAssignments(updated);
+    setAssignments(updated);
+  };
+
   return (
     <>
       <div className="home">
 
         <div className="left">
-          <AssignmentGenerator onDataSend={(newAssignment) => setAssignments([...assignments, newAssignment])} />
+          <AssignmentGenerator onDataSend={(newAssignment) => {
+            setAllAssignments([...allAssignments, newAssignment])
+            setAssignments([...assignments, newAssignment])
+          } } />
           <AssignmentFilter onFilter={onFilter} />
         </div>
         
@@ -51,8 +54,8 @@ function Home() {
               id={assignment.id} 
               title={assignment.title} 
               cState={assignment.cState}
-              onDelete={deleteAssignment} 
               onStateChange={onStateChange}
+              onDelete={deleteAssignment} 
             />
           ))}
         </div>

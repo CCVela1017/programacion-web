@@ -9,8 +9,8 @@ function AssignmentGenerator({ onDataSend }) {
       const newAssignment = { 
         id: count, 
         title: title, 
-        cState: "Pendiente", 
-        deleted: false };
+        cState: "Pendiente"
+      };
       onDataSend(newAssignment);
     }
   }

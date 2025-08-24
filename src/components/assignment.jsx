@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function Assignment({id, title, cState, onDelete, onStateChange}) {
+function Assignment({id, title, cState, onStateChange, onDelete}) {
   const [state, setState] = useState(cState);
 
   const changeState = (newState) => {
