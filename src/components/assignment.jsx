@@ -1,14 +1,19 @@
 import { useState } from 'react'
 
-function Assignment({id, title, onDelete}) {
-  const [state, setState] = useState("Pendiente");
+function Assignment({id, title, cState, onDelete, onStateChange}) {
+  const [state, setState] = useState(cState);
+
+  const changeState = (newState) => {
+    setState(newState);
+    onStateChange(id, newState);
+  }
 
   return (
     <>
       <div className="assignment">
         <p>{id}</p>
         <h3>{title}</h3>
-        <button onClick={() => setState("✓ Completada")}>{state}</button>
+        <button onClick={() => changeState("✓ Completada")}>{state}</button>
         <button onClick={() => onDelete(id)}>Eliminar</button>
       </div>
     </>

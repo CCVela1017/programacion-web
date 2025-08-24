@@ -6,7 +6,11 @@ function AssignmentGenerator({ onDataSend }) {
 
   const sendNewAssignment = () => {
     if (title.trim() !== "") {
-      const newAssignment = { id: count, title: title };
+      const newAssignment = { 
+        id: count, 
+        title: title, 
+        cState: "Pendiente", 
+        deleted: false };
       onDataSend(newAssignment);
     }
   }
