@@ -1,12 +1,36 @@
-# React + Vite
+# Hooks de React utilizados
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## useState
 
-Currently, two official plugins are available:
+Permite declarar variables de estado dentro de un componente. En este caso, se utiliza la variable normal para leer su contenido y un setNombreVariable para actualizar el valor que contiene la variable. Los componentes internos pueden reaccionar dinamicamente al valor de esta variable y cambiar lo que muestran dependiendo del valor de la variable. Se declaran con un valor predefinido (useState):
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+``` 
+const [estado, setEstado] = useState(valorInicial);
+``` 
 
-## Expanding the ESLint configuration
+Se utilizó en:
+  - **assignment.jsx**: para cambiar dinamicamente el estado de las tareas de pendiente a completado.
+  - **create-assignment.jsx**: para crear un contador de los ID de las tareas autoincrementable y para resetear el input del titulo.
+  - **filter-assignments.jsx**: para reaccionar al cambio de filtro entre "Todas las tareas", "Completadas" y "Pendientes".
+  - **home.jsx**: para setear las tareas guardadas en el localStorage y reaccionar a las tareas agregadas en create-assignment.jsx. Tambien para filtrar las tareas y mostrar las que pide el usuario.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## useEffect
+
+El useEffect se utiliza para reaccionar a cambios externos a React. En este caso puede ser una actualización en el backend, almacenamiento local, etc.
+
+``` 
+useEffect(() => {
+  return () => {
+  };
+}, [dependencias]);
+
+``` 
+
+Se utilizó en:
+  - **home.jsx**: para que cuando el usuario recargue la página, se obtenga del navegador el JSON que contiene las tareas previamente insertadas por medio de localStorage. En este caso la accion externa es cuando el usuario recargo la pagina y borro los datos anteriores.
+
+# Cloudfront CDN
+
+  - [Link para el CDN de Cloudfront](https://d30pux25v9f68b.cloudfront.net) 
+
