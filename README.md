@@ -10,3 +10,7 @@
 
 ![](docs/supplier.png)
 
+3. Creation of model: ProductImage
+
+![](docs/product-image.png)
+
