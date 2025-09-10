@@ -1,2 +1,9 @@
-**Repositorio de: Carlos Eduardo Vela Alvarado**
-*Carnet: 1507623*
+# Django Migrations (Store Project)
+
+## Migrations:
+
+1. Creation of models: Product, Category
+
+![](docs/initial.png)
+
+
