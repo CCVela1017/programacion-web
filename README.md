@@ -6,4 +6,7 @@
 
 ![](docs/initial.png)
 
+2. Creation of model: Supplier
+
+![](docs/supplier.png)
 
