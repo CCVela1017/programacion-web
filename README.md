@@ -14,3 +14,10 @@
 
 ![](docs/product-image.png)
 
+4. Applied soft-delete attributes to each model
+
+![](docs/soft-delete.png)
+
+ - Aditional: Django default models
+
+![](docs/django-default.png)
