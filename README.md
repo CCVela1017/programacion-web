@@ -1,23 +1,27 @@
-# Django Migrations (Store Project)
+# Containers (Store Project)
 
-## Migrations:
+## Excecution Instructions:
 
-1. Creation of models: Product, Category
+1. Clone the repo
+```bash
+  git@github.com:CCVela1017/programacion-web.git
+```
+2. Build the docker container
+```bash
+  docker compose build
+```
 
-![](docs/initial.png)
+3. Start the docker container
+```bash
+  docker compose up
+```
 
-2. Creation of model: Supplier
+4. Open django on localhost:8000
+```bash
+  http://localhost:8000
+```
 
-![](docs/supplier.png)
-
-3. Creation of model: ProductImage
-
-![](docs/product-image.png)
-
-4. Applied soft-delete attributes to each model
-
-![](docs/soft-delete.png)
-
- - Aditional: Django default models
-
-![](docs/django-default.png)
+5. Clean containers
+```bash
+  docker compose down -v
+```
