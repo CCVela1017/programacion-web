@@ -13,7 +13,9 @@ services:
       - .env
     depends_on:
       - db
+
     working_dir: /app
+
 
   db:
     image: postgres:15-alpine   

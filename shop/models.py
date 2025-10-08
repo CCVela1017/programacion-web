@@ -1,13 +1,21 @@
 from django.db import models
 
+def get_default_category():
+    category, created = Category.objects.get_or_create(name="Sin categoría")
+    return category.pk
+
+def get_default_supplier():
+    supplier, created = Supplier.objects.get_or_create(name="Proveedor genérico", email="example@gmail.com", phone_number="00000000")
+    return supplier.pk
+
 # Create your models here.
 class Product(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     stock = models.IntegerField()
-    category = models.ForeignKey('Category', on_delete=models.CASCADE, null=True)
-    supplier = models.ForeignKey('Supplier', on_delete=models.CASCADE, null=True)
+    category = models.ForeignKey('Category', on_delete=models.CASCADE, null=True, default=get_default_category)
+    supplier = models.ForeignKey('Supplier', on_delete=models.CASCADE, null=True, default=get_default_supplier)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
