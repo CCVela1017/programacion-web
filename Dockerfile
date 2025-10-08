@@ -1,14 +1,26 @@
-FROM python:3.11-slim
+FROM python:3.11-alpine AS builder
 
-RUN adduser --disabled-password --gecos '' appuser
+RUN apk add --no-cache build-base postgresql-dev libpq
+
+WORKDIR /app
+
+COPY app/requirements.txt .
+
+RUN pip install --no-cache-dir --prefix=/install -r requirements.txt
+
+FROM python:3.11-alpine
+
+RUN apk add --no-cache libpq
+
+RUN adduser -D appuser
 USER appuser
 
 WORKDIR /app
 
-COPY --chown=appuser:appuser requirements.txt /app/
+COPY --from=builder /install /usr/local
 
-RUN pip install --no-cache-dir -r requirements.txt
+COPY --chown=appuser:appuser app/ /app/
 
-COPY --chown=appuser:appuser . /app/
+EXPOSE 8000
 
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
