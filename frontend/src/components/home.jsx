@@ -19,14 +19,14 @@ function Home() {
 
   return (
     <>
-      <h1>Mensajes secretos</h1>
+      <h1>Mensajes Secretos</h1>
       <p>Bienvenido a la aplicación de mensajes secretos.</p>
 
-      <div>
-        <button onClick={() => setActiveTab('create')}>
+      <div className='tab-section'>
+        <button className='tab-left' onClick={() => setActiveTab('create')}>
           Crear mensaje
         </button>
-        <button onClick={() => setActiveTab('show')}>
+        <button className='tab-right' onClick={() => setActiveTab('show')}>
           Mostrar mensaje
         </button>
       </div>

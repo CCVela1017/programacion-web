@@ -1,5 +1,5 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
   line-height: 1.5;
   font-weight: 400;
 
@@ -66,3 +66,73 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.tab-section {
+  background-color: #1a1a1a;
+  padding: 13px;
+  border-radius: 10px;
+}
+
+.tab-left, .tab-right {
+  margin: 2px;
+  font-size: 1.1em;
+  font-weight: 500;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.25s, color 0.25s;
+}
+
+.tab-left {
+  background-color: #00be30;
+}
+
+.tab-right {
+  background-color: #646cff;
+}
+
+
+
+.createmsg, .showmsg {
+  background-color: #464646;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+  margin-top: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: 400px;
+  width: 100%;
+  text-align: left;
+}
+
+input {
+  font-size: 1em;
+  font-family: inherit;
+  padding: 0.6em 0.8em;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 8px;
+
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: inherit;
+}
+
+input:hover {
+  border-color: rgba(119, 89, 255, 0.3);
+}
+
+label {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+

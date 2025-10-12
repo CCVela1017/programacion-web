@@ -30,6 +30,7 @@ function SecretCreator() {
 
   return (
     <>
+    <div className="createmsg">
       <h2>Crear Mensaje Secreto</h2>
       <form onSubmit={handleSubmit}>
         <div>
@@ -50,6 +51,7 @@ function SecretCreator() {
           />
         </div>
       </form>
+      </div>
     </>
   )
 }

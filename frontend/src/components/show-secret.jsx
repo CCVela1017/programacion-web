@@ -37,6 +37,7 @@ function SecretViewer() {
 
   return (
     <>
+    <div className="showmsg">
       <h2>Mostrar Mensaje Secreto</h2>
       <form onSubmit={handleSubmit}>
         <div>
@@ -58,6 +59,7 @@ function SecretViewer() {
         </div>
       </form>
       {error && <p style={{ color: 'red' }}>{error}</p>}
+    </div>
     </>
   )
 }
