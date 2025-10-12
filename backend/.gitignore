@@ -1,2 +1,26 @@
 /.venv
 .env
+
+# Django-specific files
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+media/  # Directory for user-uploaded media files
+
+# IDE-specific files (e.g., PyCharm)
+.idea/
+
+# Operating System specific files
+.DS_Store
+Thumbs.db
+
+# Testing and build artifacts
+.coverage
+.tox/
+.eggs/
+dist/
+build/
+*.egg-info/

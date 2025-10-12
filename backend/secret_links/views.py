@@ -16,7 +16,7 @@ def create_secret_key(request):
     key = generate_unique_key()
     value = request.data.get('value')
     print(value)
-    cache.set(key, value, timeout=3600)
+    cache.set(key, value, timeout=900)
     return Response({'key': key})
 
 @api_view(['GET'])
