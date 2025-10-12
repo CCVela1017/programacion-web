@@ -15,7 +15,6 @@ from rest_framework.response import Response
 def create_secret_key(request):
     key = generate_unique_key()
     value = request.data.get('value')
-    print(value)
     cache.set(key, value, timeout=900)
     return Response({'key': key})
 

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import SecretCreator from './create-secret.jsx'
 
 
 function Home() {
@@ -7,7 +8,7 @@ function Home() {
   const renderTabs = () => {
     switch (activeTab) {
       case 'create':
-        return <div>Create Message Component</div>;
+        return <SecretCreator />;
       case 'show':
         return <div>View Messages Component</div>;
       default:
