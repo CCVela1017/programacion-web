@@ -1,5 +1,4 @@
 /.venv
-.env
 
 # Django-specific files
 *.log
@@ -24,3 +23,5 @@ Thumbs.db
 dist/
 build/
 *.egg-info/
+
+.env
