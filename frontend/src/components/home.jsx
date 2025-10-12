@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import SecretCreator from './create-secret.jsx'
+import SecretViewer from './show-secret.jsx'
 
 
 function Home() {
@@ -10,7 +11,7 @@ function Home() {
       case 'create':
         return <SecretCreator />;
       case 'show':
-        return <div>View Messages Component</div>;
+        return <SecretViewer />;
       default:
         return null;
     }
