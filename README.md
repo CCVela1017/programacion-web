@@ -1,2 +1,9 @@
-**Repositorio de: Carlos Eduardo Vela Alvarado**
-*Carnet: 1507623*
+## **Homework 8: Sonarqube**
+
+# Frontend scan results
+
+![Frontend Scan](docs/front.png)
+
+# Backend scan results
+
+![Frontend Scan](docs/back.png)
